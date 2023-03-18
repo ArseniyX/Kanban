@@ -1,7 +1,18 @@
 import { html } from 'preact'
-import { styled } from 'goober'
+import { styled, css } from 'goober'
 import BoardSVG from './icons/BoardSVG.js'
-import { appendBoardStat } from '../store/commonStore.js'
+
+const InactiveStyles = css`
+    &:hover {
+        background: #635fc715;
+        svg {
+            fill: var(--primary-background-color);
+        }
+        span {
+            color: var(--primary-background-color);
+        }
+    }
+`
 
 const TabContainer = styled('div')`
     display: inline-flex;
@@ -12,16 +23,7 @@ const TabContainer = styled('div')`
     border-radius: 0px 100px 100px 0px;
     cursor: pointer;
     svg {
-        fill: #828fa3;
-    }
-    &:hover {
-        background: #635fc715;
-        svg {
-            fill: var(--primary-background-color);
-        }
-        span {
-            color: var(--primary-background-color);
-        }
+        fill: ${({ active }) => (active ? '#fff' : '#828fa3')};
     }
 `
 
@@ -36,12 +38,12 @@ const Title = styled('span')`
     color: ${({ active }) => (active ? '#fff' : '#828FA3')};
 `
 
-const Tab = ({ active, title = 'hello' }) => {
-    return html`<${TabContainer} active="${active}" onClick="${appendBoardStat}">
+const Tab = ({ active, title, handler }) => {
+    return html`<${TabContainer} className="${active ? null : InactiveStyles}" active="${active}" onClick="${handler}">
         <${TabImage}>
             <${BoardSVG} />
         <//>
-        <${Title}>${title}<//>
+        <${Title} active="${active}">${title}<//>
     <//>`
 }
 

@@ -1,3 +1,1 @@
-export const connect = (Comp, ...args) => {
-    return () => Comp.apply(null, args)
-}
+export const connect = (Comp, store) => () => Comp.call(null, store)

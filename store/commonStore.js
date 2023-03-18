@@ -1,9 +1,4 @@
 import { proxy } from 'valtio'
 
-export const commonStore = proxy({
-    boardStat: 0
-})
+export const commonStore = proxy()
 
-export const appendBoardStat = () => ++commonStore.boardStat
-
-export const prependBoardStat = () => --commonStore.boardStat

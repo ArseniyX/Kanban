@@ -23,6 +23,10 @@ const GlobalStyles = glob`
   }
 
   body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #F4F7FD;  
     padding: 0;
     margin: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -30,6 +34,11 @@ const GlobalStyles = glob`
 `
 
 const App = () => {
+    // useEffect(() => {
+    //     const unsub = devtools(rootStore, { name: 'state name', enabled: true })
+    //     return () => unsub()
+    // }, [])
+
     return html`<${Layout}>sweet app<//> `
 }
 

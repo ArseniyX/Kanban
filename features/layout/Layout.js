@@ -6,9 +6,10 @@ const LayoutContainer = styled('div')`
     background: #f4f7fd;
 `
 
-const Layout = () => {
+const Layout = ({ children }) => {
     return html`<${LayoutContainer}>
         <${Sidebar} />
+        ${children}
     <//>`
 }
 
