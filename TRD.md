@@ -11,22 +11,22 @@
 ## Features:
 - sidebar
     - [x] logo
-    - navigation
-        - board stats
-        - board tabs
-        - add board button
+    - [x] navigation
+        - [x] board stats
+        - [x] board tabs
+        - [x] add board button
     - theme switch
     - hide sidebar
-- header
-    - add task
-    - options
+- [x]header
+    - [x] add task
+    - [x] options
 - board
     - empty board
-    - columns
-        - column stat
-        - tasks
-            - task
-    - add column
+    - [x] columns
+        - [x] column stat
+        - [x] tasks
+            - [x] task
+    - [x] add column
 - modal
     - view task
     

@@ -2,6 +2,7 @@ import { render, html, h } from 'preact'
 import { setup, glob } from 'goober'
 import Story from './features/Story.js'
 import Layout from './features/layout/Layout.js'
+import Board from './features/board/Board.js'
 
 setup(h)
 
@@ -39,7 +40,7 @@ const App = () => {
     //     return () => unsub()
     // }, [])
 
-    return html`<${Layout}>sweet app<//> `
+    return html`<${Layout}><${Board} /><//> `
 }
 
 export const getUri = () => {

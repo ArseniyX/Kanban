@@ -30,14 +30,14 @@ const DestructiveClass = css`
 `
 
 const LargeClass = css`
-    padding: 15px 61.5px;
+    padding: 15px;
     line-height: 19px;
     font-size: 15px;
     padding-bottom: 14px;
 `
 
 const SmallClass = css`
-    padding: 8px 69.5px;
+    padding: 8px;
     padding-bottom: 9px;
     line-height: 23px;
     font-size: 13px;

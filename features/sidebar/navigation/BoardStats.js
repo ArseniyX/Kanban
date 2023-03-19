@@ -1,7 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { connect } from '../../../store/utils.js'
-import { useSnapshot } from 'valtio'
+import { withStore } from '../../../store/storeAdapter.js'
 import { rootStore } from '../../../store/rootStore.js'
 
 const BoardStatsContainer = styled('div')`
@@ -9,8 +8,8 @@ const BoardStatsContainer = styled('div')`
     padding-left: 32px;
 `
 
-const BoardStats = ({ tabs }) => {
-    return html`<${BoardStatsContainer}><span>ALL BOARDS </span><span>(${tabs.length})</span><//>`
+const BoardStats = ({ boards }) => {
+    return html`<${BoardStatsContainer}><span>ALL BOARDS </span><span>(${boards.length})</span><//>`
 }
 
-export default connect(BoardStats, rootStore)
+export default withStore(BoardStats, rootStore)

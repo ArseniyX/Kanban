@@ -1,23 +1,21 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { connect } from '../../../store/utils.js'
+import { withStore } from '../../../store/storeAdapter.js'
 import Tab from '../../../common/Tab.js'
 import { appendTab, rootStore, setActive } from '../../../store/rootStore.js'
-import { useSnapshot } from '../../../libs/valtio.js'
 
 const BoardTabsContainer = styled('div')`
     margin-top: 19px;
 `
 
-const BoardTabs = () => {
-    const { tabs, activeTab } = useSnapshot(rootStore)
+const BoardTabs = ({ boards = [], activeTab }) => {
     return html`<${BoardTabsContainer}>
-        ${tabs.map(
-            ({ title }, index) =>
-                html`<${Tab} active="${index === activeTab}" title="${title}" handler="${() => setActive(index)}" />`
+        ${boards.map(
+            ({ name }, index) =>
+                html`<${Tab} active="${index === activeTab}" title="${name}" handler="${() => setActive(index)}" />`
         )}
         <${Tab} handler="${() => appendTab({ title: 'test' })}" title="+ Create New Board"
     /><//>`
 }
 
-export default BoardTabs
+export default withStore(BoardTabs, rootStore)
