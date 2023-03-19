@@ -4,7 +4,7 @@ import { styled } from 'goober'
 const TaskContainer = styled('div')`
     margin-top: 20px;
     padding: 23px 16px;
-    background: #ffffff;
+    background: var(--secondary-elements);
     box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
     border-radius: 8px;
 `

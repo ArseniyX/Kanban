@@ -14,6 +14,7 @@ const HeaderContainer = styled('div')`
     height: 88px;
     width: 100%;
     padding-bottom: 8px;
+    background: var(--secondary-elements);
 `
 
 const BoardName = styled('div')`
