@@ -27,9 +27,9 @@ const Wrapper = styled('div')`
 const ThemeSwitch = ({ darkMode }) => {
     return html`<${ThemeSwitchContainer}>
         <${Wrapper}>
-            <img src="../../assets/icon-light-theme.svg" />
+            <img src="../assets/icon-light-theme.svg" />
             <${Switch} state="${darkMode}" handleChange="${setDarkMode}" />
-            <img src="../../assets/icon-dark-theme.svg" />
+            <img src="../assets/icon-dark-theme.svg" />
         <//>
     <//>`
 }
