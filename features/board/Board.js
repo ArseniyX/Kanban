@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { withStore } from '../../store/storeAdapter.js'
+import { withRoot } from '../../store/storeAdapter.js'
 import { rootStore } from '../../store/rootStore.js'
 import Column from './Column.js'
 import NewColumn from './NewColumn.js'
@@ -19,4 +19,4 @@ const Board = ({ columns = [] }) => {
     <//>`
 }
 
-export default withStore(Board, rootStore)
+export default withRoot(Board, rootStore)

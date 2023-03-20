@@ -2,11 +2,12 @@ import { html } from 'preact'
 import { styled } from 'goober'
 import ButtonPrimary from '../../common/Button.js'
 import { rootStore } from '../../store/rootStore.js'
-import { withStore } from '../../store/storeAdapter.js'
+import { withRoot } from '../../store/storeAdapter.js'
 
 const HeaderContainer = styled('div')`
     position: fixed;
     display: flex;
+    padding-left: 324px;
     top: 0;
     justify-content: space-between;
     align-items: center;
@@ -21,7 +22,7 @@ const BoardName = styled('div')`
     color: var(--text-color);
     font-weight: 700;
     font-size: 24px;
-    margin-left: 324px;
+    
 `
 
 const OptionsContainer = styled('div')`
@@ -42,4 +43,4 @@ const Header = ({ activeTabName }) => {
     <//>`
 }
 
-export default withStore(Header, rootStore)
+export default withRoot(Header, rootStore)

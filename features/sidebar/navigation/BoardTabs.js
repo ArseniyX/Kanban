@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { withStore } from '../../../store/storeAdapter.js'
+import { withRoot } from '../../../store/storeAdapter.js'
 import Tab from '../../../common/Tab.js'
 import { appendTab, rootStore, setActive } from '../../../store/rootStore.js'
 
@@ -18,4 +18,4 @@ const BoardTabs = ({ boards = [], activeTab }) => {
     /><//>`
 }
 
-export default withStore(BoardTabs, rootStore)
+export default withRoot(BoardTabs, rootStore)

@@ -1,7 +1,7 @@
 import { html } from 'preact'
 import { styled } from 'goober'
 import Switch from '../../common/Switch.js'
-import { withStore } from '../../store/storeAdapter.js'
+import { withRoot } from '../../store/storeAdapter.js'
 import { rootStore, setDarkMode } from '../../store/rootStore.js'
 
 const ThemeSwitchContainer = styled('div')`
@@ -34,4 +34,4 @@ const ThemeSwitch = ({ darkMode }) => {
     <//>`
 }
 
-export default withStore(ThemeSwitch, rootStore)
+export default withRoot(ThemeSwitch, rootStore)

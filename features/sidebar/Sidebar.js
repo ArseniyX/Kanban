@@ -4,8 +4,7 @@ import Logo from './Logo.js'
 import Navigation from './navigation/Navigation.js'
 import ThemeSwitch from './ThemeSwitch.js'
 import HideSidebar from './HideSidebar.js'
-import { withStore } from '../../store/storeAdapter.js'
-import { rootStore } from '../../store/rootStore.js'
+import { withRoot } from '../../store/storeAdapter.js'
 
 const SidebarContainer = styled('div')`
     position: fixed;
@@ -41,4 +40,4 @@ const Sidebar = ({ sidebarOpened }) => {
     )
 }
 
-export default withStore(Sidebar, rootStore)
+export default withRoot(Sidebar)

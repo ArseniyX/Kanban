@@ -1,7 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { withStore } from '../../../store/storeAdapter.js'
-import { rootStore } from '../../../store/rootStore.js'
+import { withRoot } from '../../../store/storeAdapter.js'
 
 const BoardStatsContainer = styled('div')`
     color: #828fa3;
@@ -12,4 +11,4 @@ const BoardStats = ({ boards }) => {
     return html`<${BoardStatsContainer}><span>ALL BOARDS </span><span>(${boards.length})</span><//>`
 }
 
-export default withStore(BoardStats, rootStore)
+export default withRoot(BoardStats)
