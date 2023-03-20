@@ -21,6 +21,10 @@ const SidebarContainer = styled('div')`
     background: var(--secondary-elements);
 `
 
+const BottomBlock = styled('div')`
+    margin-bottom: 32px;
+`
+
 const Sidebar = ({ sidebarOpened }) => {
     return (
         sidebarOpened &&
@@ -29,10 +33,10 @@ const Sidebar = ({ sidebarOpened }) => {
             <${Logo}/>
             <${Navigation}/>
         </div>
-        <div>
+        <${BottomBlock}>
             <${ThemeSwitch}/>
             <${HideSidebar} />
-        </div>
+        <//>
     </${SidebarContainer}>`
     )
 }
