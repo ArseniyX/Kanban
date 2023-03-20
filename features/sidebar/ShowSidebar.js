@@ -17,7 +17,7 @@ const ShowSidebar = ({ sidebarOpened }) => {
     return (
         !sidebarOpened &&
         html`<${ShowSidebarContainer} onClick="${toggleSidebar}">
-            <img src="../assets/icon-show-sidebar.svg" />
+            <img src="./assets/icon-show-sidebar.svg" />
         <//>`
     )
 }
