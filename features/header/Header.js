@@ -18,6 +18,7 @@ const HeaderContainer = styled('div')`
 `
 
 const BoardName = styled('div')`
+    color: var(--text-color);
     font-weight: 700;
     font-size: 24px;
     margin-left: 324px;

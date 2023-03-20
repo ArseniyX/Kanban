@@ -6,22 +6,31 @@ import { rootStore, setDarkMode } from '../../store/rootStore.js'
 
 const ThemeSwitchContainer = styled('div')`
     margin: 25px;
+    margin-bottom: 8px;
     padding: 14px;
-    max-width: 250px;
-    background: #f4f7fd;
+    background: var(--main-background);
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 64px;
+    padding-right: 64px;
+`
+
+const Wrapper = styled('div')`
+    display: flex;
+    width: 115px;
+    justify-content: space-between;
+    align-items: center;
 `
 
 const ThemeSwitch = ({ darkMode }) => {
     return html`<${ThemeSwitchContainer}>
-        <img src="../../assets/icon-light-theme.svg" />
-        <${Switch} state="${darkMode}" handleChange="${setDarkMode}" />
-        <img src="../../assets/icon-dark-theme.svg" />
+        <${Wrapper}>
+            <img src="../../assets/icon-light-theme.svg" />
+            <${Switch} state="${darkMode}" handleChange="${setDarkMode}" />
+            <img src="../../assets/icon-dark-theme.svg" />
+        <//>
     <//>`
 }
 

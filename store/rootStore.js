@@ -23,4 +23,9 @@ export const setActive = (index) => {
 export const setDarkMode = (state) => {
     document.documentElement.className = state ? 'dark' : 'light'
     rootStore.darkMode = state
+    updateParams({ key: 'theme', value: state ? 'dark': 'light'})
+}
+
+export const toggleSidebar = () => {
+    rootStore.sidebarOpened = !rootStore.sidebarOpened
 }

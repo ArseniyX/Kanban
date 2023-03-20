@@ -2,7 +2,7 @@ import { html } from 'preact'
 import { styled } from 'goober'
 
 const NewColumnContainer = styled('div')`
-    background: linear-gradient(180deg, #e9effa 0%, rgba(233, 239, 250, 0.5) 100%);
+    background: var(--new-column-bg);
     border-radius: 6px;
     margin-right: 24px;
     width: 280px;

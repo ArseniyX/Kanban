@@ -2,7 +2,7 @@ import { html } from 'preact'
 import { styled, css } from 'goober'
 
 const PrimaryClass = css`
-    color: var(--primary-text-color);
+    color: #fff;
     background: var(--primary-background-color);
     border-radius: 24px;
     font-size: 15px;

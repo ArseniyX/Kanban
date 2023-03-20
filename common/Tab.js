@@ -38,10 +38,10 @@ const Title = styled('span')`
     color: ${({ active }) => (active ? '#fff' : '#828FA3')};
 `
 
-const Tab = ({ active, title, handler }) => {
+const Tab = ({ active, title, handler, Icon = BoardSVG }) => {
     return html`<${TabContainer} className="${active ? null : InactiveStyles}" active="${active}" onClick="${handler}">
         <${TabImage}>
-            <${BoardSVG} />
+            <${Icon} />
         <//>
         <${Title} active="${active}">${title}<//>
     <//>`

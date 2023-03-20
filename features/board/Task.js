@@ -9,7 +9,8 @@ const TaskContainer = styled('div')`
     border-radius: 8px;
 `
 
-const CardTitle = styled('div')`
+const CardTitle = styled('span')`
+    color: var(--text-color);
     font-weight: 700;
     font-size: 15px;
     line-height: 19px;
