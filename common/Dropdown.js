@@ -4,6 +4,7 @@ import { Label } from './ui/label.js'
 
 const DropdownContainer = styled('div')`
     position: relative;
+    margin-top: 24px;
 `
 
 const Select = styled('div')`
@@ -29,7 +30,9 @@ const DropContainer = styled('div')`
     border-radius: 8px;
 `
 
-const SelectValue = styled('span')``
+const SelectValue = styled('span')`
+    color: var(--text-color);
+`
 
 const Item = styled('span')`
     height: 23px;
@@ -60,7 +63,7 @@ const Dropdown = ({ label, selectedValue = 'Todo' }) => {
     return html`<${DropdownContainer}>
         ${label && html`<${Label}>${label}<//>`}
 
-        <${Select} onClick="${() => setOpen(true)}">
+        <${Select} onClick="${() => setOpen(!open)}">
             <${SelectValue}>${value}<//>
             <img src="${'./assets/icon-chevron-arrow.svg'.replace('arrow', open ? 'up' : 'down')}" />
         <//>
