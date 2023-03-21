@@ -4,6 +4,8 @@ import { withRoot } from '../../store/storeAdapter.js'
 import { rootStore } from '../../store/rootStore.js'
 import Column from './Column.js'
 import NewColumn from './NewColumn.js'
+import Modal from '../../common/Modal.js'
+import TaskDetails from '../modals/TaskDetails.js'
 
 const BoardContainer = styled('div')`
     display: flex;
@@ -16,6 +18,7 @@ const Board = ({ columns = [] }) => {
     return html`<${BoardContainer}>
         ${columns.map(({ name, tasks }) => html`<${Column} name="${name}" tasks="${tasks}" />`)}
         <${NewColumn} />
+        <${TaskDetails} />
     <//>`
 }
 

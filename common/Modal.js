@@ -1,4 +1,4 @@
-import { html } from 'preact'
+import { html, useState } from 'preact'
 import { styled } from 'goober'
 
 const ModalBackground = styled('div')`
@@ -16,25 +16,20 @@ const ModalBackground = styled('div')`
 
 const ModalContainer = styled('div')`
     width: 480px;
-    background: #ffffff;
+    background: var(--secondary-elements);
     border-radius: 6px;
     padding: 32px;
 `
 
-const Modal = () => {
-    const [open, setOpen] = useState(defaultOpen)
-
-    function handleClose() {
-        setOpen(false)
-    }
-
+const Modal = ({ children, open = true, onClose = () => {} }) => {
     const preventPropagation = (e) => {
         e.stopPropagation()
     }
+
     return (
         open &&
-        html`<${ModalBackground}>
-            <${ModalContainer}><//>
+        html`<${ModalBackground} onClick="${onClose}">
+            <${ModalContainer} onClick="${preventPropagation}"> ${children} <//>
         <//>`
     )
 }

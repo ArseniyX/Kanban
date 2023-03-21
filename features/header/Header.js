@@ -22,7 +22,6 @@ const BoardName = styled('div')`
     color: var(--text-color);
     font-weight: 700;
     font-size: 24px;
-    
 `
 
 const OptionsContainer = styled('div')`
@@ -30,7 +29,7 @@ const OptionsContainer = styled('div')`
     justify-content: space-between;
     align-items: center;
     width: 200px;
-    margin-right: 32px;
+    margin-right: 360px;
 `
 
 const Header = ({ activeTabName }) => {
@@ -38,9 +37,9 @@ const Header = ({ activeTabName }) => {
         ><${BoardName}>${activeTabName}<//>
         <${OptionsContainer}>
             <${ButtonPrimary} variant="primary" size="large">+ Add New Task<//>
-            <img src="./assets/icon-vertical-ellipsis.svg"
-        /><//>
+            <img src="./assets/icon-vertical-ellipsis.svg" />
+        <//>
     <//>`
 }
 
-export default withRoot(Header, rootStore)
+export default withRoot(Header)

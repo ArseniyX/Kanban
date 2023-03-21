@@ -3,13 +3,15 @@ import { styled } from 'goober'
 
 const CheckFiledContainer = styled('label')`
     display: flex;
+    margin-top: 8px;
     align-items: center;
     padding: 12px;
-    background: var(--checkbox-background-color);
-    width: 350px;
+    background: var(--main-background);
     height: 40px;
     text-decoration: ${({ isChecked }) => (isChecked ? 'line-through' : 'none')};
     cursor: pointer;
+    border-radius: 4px;
+    mix-blend-mode: normal;
     &:hover {
         background: var(--main-hover-color);
     }
@@ -27,13 +29,14 @@ const TextStyle = styled('span')`
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
+    color: var(--text-color);
     height: 15px;
     margin-top: 1px;
     opacity: ${({ isChecked }) => (isChecked ? 0.5 : 1)};
 `
 
-const CheckFiled = ({ setSelected = () => {}, text = '' }) => {
-    const [state, setState] = useState(false)
+const CheckFiled = ({ setSelected = () => {}, defaultState, text = '' }) => {
+    const [state, setState] = useState(defaultState)
 
     const onChange = () => {
         setState(!state)
@@ -41,7 +44,7 @@ const CheckFiled = ({ setSelected = () => {}, text = '' }) => {
     }
 
     return html`<${CheckFiledContainer} value="${state}" onInput="${onChange}" isChecked="${state}">
-        <${Checkbox} type="checkbox" /><${TextStyle} isChecked="${state}">${text}<//><//
+        <${Checkbox} type="checkbox" checked="${state}" /><${TextStyle} isChecked="${state}">${text}<//><//
     >`
 }
 

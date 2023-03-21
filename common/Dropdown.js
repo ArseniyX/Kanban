@@ -2,7 +2,9 @@ import { html, useState } from 'preact'
 import { styled } from 'goober'
 import { Label } from './ui/label.js'
 
-const DropdownContainer = styled('div')``
+const DropdownContainer = styled('div')`
+    position: relative;
+`
 
 const Select = styled('div')`
     display: flex;
@@ -14,11 +16,15 @@ const Select = styled('div')`
 `
 
 const DropContainer = styled('div')`
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 93%;
     display: flex;
     flex-direction: column;
     padding: 16px;
     padding-top: 8px;
-    background: #ffffff;
+    background: var(--main-background);
     box-shadow: 0px 10px 20px rgba(54, 78, 126, 0.25);
     border-radius: 8px;
 `
@@ -52,7 +58,7 @@ const Dropdown = ({ label, selectedValue = 'Todo' }) => {
     const [value, setValue] = useState(selectedValue)
 
     return html`<${DropdownContainer}>
-        <${Label}>${label}<//>
+        ${label && html`<${Label}>${label}<//>`}
 
         <${Select} onClick="${() => setOpen(true)}">
             <${SelectValue}>${value}<//>

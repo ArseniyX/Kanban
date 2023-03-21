@@ -8,7 +8,11 @@ export const rootStore = proxy({
     sidebarOpened: true,
     activeTab: 0,
     activeTabName: 'Platform Launch',
-    columns: data.boards[0].columns
+    columns: data.boards[0].columns,
+    openTask: false,
+    openBoard: false,
+    openDeleteBoard: false,
+    selectedTask: {}
 })
 
 export const appendTab = (board) => rootStore.boards.push(board)
@@ -23,9 +27,18 @@ export const setActive = (index) => {
 export const setDarkMode = (state) => {
     document.documentElement.className = state ? 'dark' : 'light'
     rootStore.darkMode = state
-    updateParams({ key: 'theme', value: state ? 'dark': 'light'})
+    updateParams({ key: 'theme', value: state ? 'dark' : 'light' })
 }
 
 export const toggleSidebar = () => {
     rootStore.sidebarOpened = !rootStore.sidebarOpened
+}
+
+export const closeTask = () => {
+    rootStore.openTask = false
+}
+
+export const openTask = (task) => {
+    rootStore.openTask = true
+    rootStore.selectedTask = task
 }

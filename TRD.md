@@ -1,6 +1,6 @@
-1. theme useContext
-2. routing
-3. navigation
+1. [x] theme useContext
+2. [x] routing
+3. [x] navigation
 
 ## Common:
 - [x] button
@@ -9,14 +9,14 @@
 - [x] dropdown
 
 ## Features:
-- sidebar
+- [x] sidebar
     - [x] logo
     - [x] navigation
         - [x] board stats
         - [x] board tabs
         - [x] add board button
-    - theme switch
-    - hide sidebar
+    - [x] theme switch
+    - [x] hide sidebar
 - [x]header
     - [x] add task
     - [x] options
