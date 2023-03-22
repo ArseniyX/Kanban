@@ -29,10 +29,10 @@ const ColumnStatistics = ({ name, size }) => html`<${ColumnStat}>
     <${ColumnName}>${name} (${size})<//>
 <//>`
 
-const Column = ({ name, tasks }) => {
+const Column = ({ name, tasks, columnId }) => {
     return html`<${ColumnContainer}>
         <${ColumnStatistics} size="${tasks.length}" name="${name}" />
-        ${tasks.map((task) => html`<${Task} ...${task} /> `)}
+        ${tasks.map((task, taskId) => html`<${Task} ...${task} taskId="${taskId}" columnId="${columnId}" /> `)}
     <//>`
 }
 

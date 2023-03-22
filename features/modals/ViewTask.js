@@ -31,7 +31,7 @@ const Subtasks = ({ subtasks }) => {
     )
 }
 
-const TaskDetails = ({ selectedTask, openTask }) => {
+const ViewTask = ({ selectedTask, openTask }) => {
     const { title, subtasks = [], description, status } = selectedTask
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
     return html` <${Modal} open="${openTask}" onClose="${closeTask}">
@@ -46,4 +46,4 @@ const TaskDetails = ({ selectedTask, openTask }) => {
     <//>`
 }
 
-export default withRoot(TaskDetails)
+export default withRoot(ViewTask)

@@ -11,8 +11,8 @@ const BoardTabsContainer = styled('div')`
 const BoardTabs = ({ boards = [], activeTab }) => {
     return html`<${BoardTabsContainer}>
         ${boards.map(
-            ({ name }, index) =>
-                html`<${Tab} active="${index === activeTab}" title="${name}" handler="${() => setActive(index)}" />`
+            ({ name }, boardId) =>
+                html`<${Tab} active="${boardId === activeTab}" title="${name}" handler="${() => setActive(boardId)}" />`
         )}
         <${Tab} handler="${() => appendTab({ title: 'test' })}" title="+ Create New Board"
     /><//>`

@@ -1,8 +1,8 @@
 import { html } from 'preact'
 import { styled } from 'goober'
 import ButtonPrimary from '../../common/Button.js'
-import { rootStore } from '../../store/rootStore.js'
 import { withRoot } from '../../store/storeAdapter.js'
+import { openAddTask } from '../../store/rootStore.js'
 
 const HeaderContainer = styled('div')`
     position: fixed;
@@ -36,7 +36,7 @@ const Header = ({ activeTabName }) => {
     return html`<${HeaderContainer}
         ><${BoardName}>${activeTabName}<//>
         <${OptionsContainer}>
-            <${ButtonPrimary} variant="primary" size="large">+ Add New Task<//>
+            <${ButtonPrimary} onClick="${openAddTask}" variant="primary" size="large">+ Add New Task<//>
             <img src="./assets/icon-vertical-ellipsis.svg" />
         <//>
     <//>`

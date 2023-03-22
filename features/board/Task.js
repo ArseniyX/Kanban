@@ -27,9 +27,9 @@ export const SubtaskStat = ({ countCompleted, size }) => {
 }
 
 const Task = (props) => {
-    const { title, subtasks } = props
+    const { title, subtasks, columnId, taskId } = props
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
-    return html`<${TaskContainer} onClick="${() => openTask(props)}">
+    return html`<${TaskContainer} onClick="${() => openTask(columnId, taskId)}">
         <${CardTitle}> ${title}<//>
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
     <//>`

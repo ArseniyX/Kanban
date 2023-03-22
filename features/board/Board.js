@@ -4,8 +4,8 @@ import { withRoot } from '../../store/storeAdapter.js'
 import { rootStore } from '../../store/rootStore.js'
 import Column from './Column.js'
 import NewColumn from './NewColumn.js'
-import Modal from '../../common/Modal.js'
-import TaskDetails from '../modals/TaskDetails.js'
+import ViewTask from '../modals/ViewTask.js'
+import AddEditTask from '../modals/AddEditTask.js'
 
 const BoardContainer = styled('div')`
     display: flex;
@@ -16,9 +16,12 @@ const BoardContainer = styled('div')`
 
 const Board = ({ columns = [] }) => {
     return html`<${BoardContainer}>
-        ${columns.map(({ name, tasks }) => html`<${Column} name="${name}" tasks="${tasks}" />`)}
+        ${columns.map(
+            ({ name, tasks }, columnId) => html`<${Column} name="${name}" tasks="${tasks}" columnId="${columnId}" />`
+        )}
         <${NewColumn} />
-        <${TaskDetails} />
+        <${ViewTask} />
+        <${AddEditTask} />
     <//>`
 }
 

@@ -51,8 +51,9 @@ const ButtonPrimaryContainer = styled('button')`
     border: none;
 `
 
-const ButtonPrimary = ({ children, variant, size }) => {
+const ButtonPrimary = ({ children, variant, size, ...props }) => {
     return html`<${ButtonPrimaryContainer}
+        ...${props}
         className="${{
             primary: PrimaryClass,
             secondary: SecondaryClass,

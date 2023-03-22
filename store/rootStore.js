@@ -10,6 +10,8 @@ export const rootStore = proxy({
     activeTabName: 'Platform Launch',
     columns: data.boards[0].columns,
     openTask: false,
+    openAddTask: false,
+    openEditTask: false,
     openBoard: false,
     openDeleteBoard: false,
     selectedTask: {}
@@ -17,17 +19,18 @@ export const rootStore = proxy({
 
 export const appendTab = (board) => rootStore.boards.push(board)
 
-export const setActive = (index) => {
-    rootStore.activeTab = index
-    rootStore.activeTabName = rootStore.boards[index].name
-    rootStore.columns = rootStore.boards[index].columns
+export const setActive = (boardId) => {
+    rootStore.activeTab = boardId
+    rootStore.activeTabName = rootStore.boards[boardId].name
+    rootStore.columns = rootStore.boards[boardId].columns
     updateParams({ key: 'board', value: rootStore.activeTabName })
 }
 
 export const setDarkMode = (state) => {
-    document.documentElement.className = state ? 'dark' : 'light'
+    const value = state ? 'dark' : 'light'
+    document.documentElement.className = value
     rootStore.darkMode = state
-    updateParams({ key: 'theme', value: state ? 'dark' : 'light' })
+    updateParams({ key: 'theme', value })
 }
 
 export const toggleSidebar = () => {
@@ -38,7 +41,16 @@ export const closeTask = () => {
     rootStore.openTask = false
 }
 
-export const openTask = (task) => {
+export const openTask = (columnId, taskId) => {
+    rootStore.selectedTask = rootStore.columns[columnId].tasks[taskId]
     rootStore.openTask = true
-    rootStore.selectedTask = task
+}
+
+export const openAddTask = () => {
+    rootStore.openAddTask = true
+}
+
+export const toggleEditTask = () => {
+    rootStore.openEditTask = false
+    rootStore.openAddTask = false
 }
