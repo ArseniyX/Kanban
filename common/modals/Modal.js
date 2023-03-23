@@ -1,4 +1,4 @@
-import { html, useState } from 'preact'
+import { html } from 'preact'
 import { styled } from 'goober'
 
 const ModalBackground = styled('div')`

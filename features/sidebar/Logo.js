@@ -1,12 +1,13 @@
 import { html } from 'preact'
 import { styled } from 'goober'
+import { withRoot } from '../../store/storeAdapter.js'
 
 const Image = styled('img')`
     margin: 34px;
 `
 
-const Logo = () => {
-    return html`<${Image} src="./assets/logo-dark.svg" />`
+const Logo = ({ darkMode }) => {
+    return html`<${Image} src="./assets/logo-${darkMode ? 'light' : 'dark'}.svg" />`
 }
 
-export default Logo
+export default withRoot(Logo)

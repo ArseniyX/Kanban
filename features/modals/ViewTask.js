@@ -1,22 +1,11 @@
 import { html } from 'preact'
 import { styled } from 'goober'
 import { withRoot } from '../../store/storeAdapter.js'
-import Modal from '../../common/Modal.js'
+import DetailsModal from '../../common/modals/DetailsModal.js'
 import { closeTask } from '../../store/rootStore.js'
 import { SubtaskStat } from '../board/Task.js'
 import Dropdown from '../../common/Dropdown.js'
 import CheckFiled from '../../common/CheckFiled.js'
-
-const DetailsHeader = styled('div')`
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-`
-
-const DetailsTitle = styled('span')`
-    font-weight: 700;
-    font-size: 18px;
-`
 
 const TaskContent = styled('span')`
     display: block;
@@ -34,11 +23,7 @@ const Subtasks = ({ subtasks }) => {
 const ViewTask = ({ selectedTask, openTask }) => {
     const { title, subtasks = [], description, status } = selectedTask
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
-    return html` <${Modal} open="${openTask}" onClose="${closeTask}">
-        <${DetailsHeader}>
-            <${DetailsTitle}>${title}<//>
-            <img src="./assets/icon-vertical-ellipsis.svg" />
-        <//>
+    return html` <${DetailsModal} title="${title}" open="${openTask}" onClose="${closeTask}" options>
         <${TaskContent}>${description}<//>
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
         <${Subtasks} subtasks="${subtasks}" />

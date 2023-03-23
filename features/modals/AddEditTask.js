@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import Modal from '../../common/Modal.js'
+import DetailsModal from '../../common/modals/DetailsModal.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { toggleEditTask } from '../../store/rootStore.js'
 
@@ -11,7 +11,7 @@ const Title = styled('span')`
 `
 
 const AddEditTask = ({ openEditTask, openAddTask }) => {
-    return html`<${Modal} open="${openEditTask || openAddTask}" onClose="${toggleEditTask}">
+    return html`<${DetailsModal} open="${openEditTask || openAddTask}" onClose="${toggleEditTask}">
         <${Title}>${openEditTask && 'Edit'}${openAddTask && 'Add'} Task<//>
     <//>`
 }
