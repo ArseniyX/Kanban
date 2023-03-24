@@ -5,6 +5,7 @@ import Column from './Column.js'
 import NewColumn from './NewColumn.js'
 import ViewTask from '../modals/ViewTask.js'
 import AddEditTask from '../modals/AddEditTask.js'
+import AddEditBoard from '../modals/AddEditBoard.js'
 
 const BoardContainer = styled('div')`
     display: flex;
@@ -21,6 +22,7 @@ const Board = ({ columns = [], sidebarOpened }) => {
         <${NewColumn} />
         <${ViewTask} />
         <${AddEditTask} />
+        <${AddEditBoard} />
     <//>`
 }
 

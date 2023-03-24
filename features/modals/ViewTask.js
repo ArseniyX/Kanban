@@ -19,11 +19,23 @@ const Subtasks = ({ subtasks }) => {
         ({ isCompleted, title }) => html` <${CheckFiled} defaultState="${isCompleted}" text="${title}" /> `
     )
 }
+const options = [
+    {
+        title: 'Edit Task',
+        handler: () => {},
+        variant: 'regular'
+    },
+    {
+        title: 'Delete Task',
+        handler: () => {},
+        variant: 'warning'
+    }
+]
 
 const ViewTask = ({ selectedTask, openTask }) => {
     const { title, subtasks = [], description, status } = selectedTask
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
-    return html` <${DetailsModal} title="${title}" open="${openTask}" onClose="${closeTask}" options>
+    return html` <${DetailsModal} title="${title}" open="${openTask}" onClose="${closeTask}" options="${options}">
         <${TaskContent}>${description}<//>
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
         <${Subtasks} subtasks="${subtasks}" />

@@ -1,0 +1,20 @@
+{
+  "name": "kanban",
+  "version": "1.0.0",
+  "description": "![Design preview for the Kanban task management web app coding challenge](./preview.jpg)",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArseniyX/Kanban.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArseniyX/Kanban/issues"
+  },
+  "homepage": "https://github.com/ArseniyX/Kanban#readme"
+}

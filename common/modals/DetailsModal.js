@@ -4,7 +4,6 @@ import SelectModal from './SelectModal.js'
 import Modal from './Modal.js'
 
 const DetailsHeader = styled('div')`
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -15,17 +14,26 @@ const DetailsTitle = styled('span')`
     font-size: 18px;
 `
 
+const EllipsisBlock = styled('div')`
+    position: relative;
+`
+
 const Ellipsis = styled('img')`
     cursor: pointer;
 `
 
-export const Options = (options) => {
-    const onEllipsis = () => {}
-    return html`<${Ellipsis} click="${onEllipsis}" src="./assets/icon-vertical-ellipsis.svg" /> <${SelectModal}><//>`
+export const Options = ({ options, position }) => {
+    const [open, setOpen] = useState(false)
+    const onEllipsis = () => {
+        setOpen(!open)
+    }
+    return html`<${EllipsisBlock}
+        ><${Ellipsis} onClick="${onEllipsis}" src="./assets/icon-vertical-ellipsis.svg" />
+        <${SelectModal} options="${options}" position="${position}" open="${open}"><//
+    ><//>`
 }
 
 const DetailsModal = ({ children, title, options, open, onClose = () => {} }) => {
-    debugger
     return (
         open &&
         html`<${Modal} onClose="${onClose}" open="${open}">

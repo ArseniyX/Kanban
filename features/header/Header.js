@@ -34,12 +34,25 @@ const OptionsContainer = styled('div')`
     margin-right: 24px;
 `
 
+const options = [
+    {
+        title: 'Edit Board',
+        handler: () => {},
+        variant: 'regular'
+    },
+    {
+        title: 'Delete Board',
+        handler: () => {},
+        variant: 'warning'
+    }
+]
+
 const Header = ({ activeTabName, sidebarOpened }) => {
     return html`<${HeaderContainer} isSidebar="${sidebarOpened}"
         ><${BoardName}>${activeTabName}<//>
         <${OptionsContainer}>
             <${ButtonPrimary} onClick="${openAddTask}" variant="primary" size="large">+ Add New Task<//>
-            <${Options} />
+            <${Options} options="${options}" position="right" />
         <//>
     <//>`
 }
