@@ -1,6 +1,6 @@
 import { html, useState } from 'preact'
 import { styled } from 'goober'
-import { Label } from './ui/label.js'
+import { Label } from './typography/label.js'
 
 const DropdownContainer = styled('div')`
     position: relative;

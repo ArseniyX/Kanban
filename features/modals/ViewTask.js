@@ -5,7 +5,7 @@ import DetailsModal from '../../common/modals/DetailsModal.js'
 import { closeTask, openEditTask } from '../../store/rootStore.js'
 import { SubtaskStat } from '../board/Task.js'
 import Dropdown from '../../common/Dropdown.js'
-import CheckFiled from '../../common/CheckFiled.js'
+import CheckFiled from '../../common/inputs/CheckFiled.js'
 
 const TaskContent = styled('span')`
     display: block;

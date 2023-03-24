@@ -1,6 +1,6 @@
 import { html, useState, useRef } from 'preact'
 import { styled } from 'goober'
-import { Label } from './ui/label.js'
+import { Label } from '../typography/label.js'
 
 const TextFieldContainer = styled('div')``
 

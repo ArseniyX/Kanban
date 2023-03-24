@@ -3,7 +3,8 @@ import { styled } from 'goober'
 import DetailsModal from '../../common/modals/DetailsModal.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditBoard } from '../../store/rootStore.js'
-import TextField from '../../common/TextField.js'
+import Subtasks from './Subtasks.js'
+import ButtonPrimary from '../../common/inputs/Button.js'
 
 const AddEditBoard = ({ openEditBoard, openAddBoard }) => {
     const formatTitle = `${openAddBoard ? 'Add New' : 'Edit'} Board`
@@ -12,8 +13,7 @@ const AddEditBoard = ({ openEditBoard, openAddBoard }) => {
         onClose="${closeAddEditBoard}"
         title="${formatTitle}"
     >
-        <${TextField} label="Title" placeholder="Task Name..." withoutClear />
-        <${Dropdown} label="Status" />
+        <${Subtasks} />
         <${ButtonPrimary}>Create New Board<//>
     <//>`
 }

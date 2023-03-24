@@ -3,9 +3,10 @@ import { styled } from 'goober'
 import DetailsModal from '../../common/modals/DetailsModal.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditTask } from '../../store/rootStore.js'
-import TextField from '../../common/TextField.js'
-import ButtonPrimary from '../../common/Button.js'
+import TextField from '../../common/inputs/TextField.js'
+import ButtonPrimary from '../../common/inputs/Button.js'
 import Dropdown from '../../common/Dropdown.js'
+import Subtasks from './Subtasks.js'
 
 const AddEditTask = ({ openEditTask, openAddTask }) => {
     const formatTitle = `${openAddTask ? 'Add' : 'Edit'} Task`
@@ -20,8 +21,9 @@ const AddEditTask = ({ openEditTask, openAddTask }) => {
             placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
             withoutClear
         />
+        <${Subtasks} />
         <${Dropdown} label="Status" />
-        <${ButtonPrimary}> + Add New Subtask <//>
+        <${ButtonPrimary}>Save Changes<//>
     <//>`
 }
 

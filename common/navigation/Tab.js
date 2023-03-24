@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled, css } from 'goober'
-import BoardSVG from './icons/BoardSVG.js'
+import BoardSVG from '../icons/BoardSVG.js'
 
 const InactiveStyles = css`
     &:hover {

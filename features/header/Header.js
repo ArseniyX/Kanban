@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import ButtonPrimary from '../../common/Button.js'
+import ButtonPrimary from '../../common/inputs/Button.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { openAddTask, openEditBoard } from '../../store/rootStore.js'
 import { Options } from '../../common/modals/DetailsModal.js'
