@@ -3,7 +3,7 @@ import { styled } from 'goober'
 
 const SelectModalContainer = styled('div')`
     position: absolute;
-    top: 32px;
+    top: 46px;
     right: ${({ position }) => ({ right: '0', center: '-100px' }[position])};
     width: 192px;
     padding: 16px;

@@ -5,7 +5,7 @@ import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditTask } from '../../store/rootStore.js'
 import TextField from '../../common/inputs/TextField.js'
 import ButtonPrimary from '../../common/inputs/Button.js'
-import Dropdown from '../../common/Dropdown.js'
+import Select from '../../common/inputs/Select.js'
 import Subtasks from './Subtasks.js'
 
 const AddEditTask = ({ openEditTask, openAddTask }) => {
@@ -22,7 +22,7 @@ const AddEditTask = ({ openEditTask, openAddTask }) => {
             withoutClear
         />
         <${Subtasks} />
-        <${Dropdown} label="Status" />
+        <${Select} label="Status" />
         <${ButtonPrimary}>Save Changes<//>
     <//>`
 }

@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import Switch from '../../common/Switch.js'
+import Switch from '../../common/inputs/Switch.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { rootStore, setDarkMode } from '../../store/rootStore.js'
 

@@ -4,7 +4,7 @@ import { withRoot } from '../../store/storeAdapter.js'
 import DetailsModal from '../../common/modals/DetailsModal.js'
 import { closeTask, openEditTask } from '../../store/rootStore.js'
 import { SubtaskStat } from '../board/Task.js'
-import Dropdown from '../../common/Dropdown.js'
+import Select from '../../common/inputs/Select.js'
 import CheckFiled from '../../common/inputs/CheckFiled.js'
 
 const TaskContent = styled('span')`
@@ -39,7 +39,7 @@ const ViewTask = ({ selectedTask, openTask }) => {
         <${TaskContent}>${description}<//>
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
         <${Subtasks} subtasks="${subtasks}" />
-        <${Dropdown} label="Current Status" selectedValue="${status}" />
+        <${Select} label="Current Status" selectedValue="${status}" />
     <//>`
 }
 

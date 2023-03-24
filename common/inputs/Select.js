@@ -1,13 +1,13 @@
 import { html, useState } from 'preact'
 import { styled } from 'goober'
-import { Label } from './typography/label.js'
+import { Label } from '../data-display/label.js'
 
-const DropdownContainer = styled('div')`
+const SelectContainer = styled('div')`
     position: relative;
     margin-top: 24px;
 `
 
-const Select = styled('div')`
+const SelectStyled = styled('div')`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,14 +56,14 @@ const Items = ({ items = ['Todo', 'Doing', 'Done'], setValue, setOpen }) => {
     <//>`
 }
 
-const Dropdown = ({ label, selectedValue = 'Todo' }) => {
+const Select = ({ label, selectedValue = 'Todo' }) => {
     const [open, setOpen] = useState(false)
     const [value, setValue] = useState(selectedValue)
 
-    return html`<${DropdownContainer}>
+    return html`<${SelectContainer}>
         ${label && html`<${Label}>${label}<//>`}
 
-        <${Select} onClick="${() => setOpen(!open)}">
+        <${SelectStyled} onClick="${() => setOpen(!open)}">
             <${SelectValue}>${value}<//>
             <img src="${'./assets/icon-chevron-arrow.svg'.replace('arrow', open ? 'up' : 'down')}" />
         <//>
@@ -71,4 +71,4 @@ const Dropdown = ({ label, selectedValue = 'Todo' }) => {
     <//>`
 }
 
-export default Dropdown
+export default Select
