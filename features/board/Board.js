@@ -17,7 +17,7 @@ const BoardContainer = styled('div')`
 const Board = ({ columns = [], sidebarOpened }) => {
     return html`<${BoardContainer} isSidebar="${sidebarOpened}">
         ${columns.map(
-            ({ name, tasks }, columnId) => html`<${Column} name="${name}" tasks="${tasks}" columnId="${columnId}" />`
+            ({ title, tasks }, columnId) => html`<${Column} title="${title}" tasks="${tasks}" columnId="${columnId}" />`
         )}
         <${NewColumn} />
         <${ViewTask} />

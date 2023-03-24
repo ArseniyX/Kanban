@@ -45,6 +45,8 @@ const SmallClass = css`
 `
 
 const ButtonPrimaryContainer = styled('button')`
+    text-transform: capitalize;
+    margin-top: ${({ top }) => top + 'px'};
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 700;

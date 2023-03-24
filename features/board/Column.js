@@ -24,14 +24,16 @@ const Circle = styled('div')`
     border-radius: 50%;
 `
 
-const ColumnStatistics = ({ name, size }) => html`<${ColumnStat}>
-    <${Circle} />
-    <${ColumnName}>${name} (${size})<//>
-<//>`
+const ColumnStatistics = ({ title, size }) => {
+    return html`<${ColumnStat}>
+        <${Circle} />
+        <${ColumnName}>${title} (${size})<//>
+        <//>`
+}
 
-const Column = ({ name, tasks, columnId }) => {
+const Column = ({ title, tasks, columnId }) => {
     return html`<${ColumnContainer}>
-        <${ColumnStatistics} size="${tasks.length}" name="${name}" />
+        <${ColumnStatistics} size="${tasks.length}" title="${title}" />
         ${tasks.map((task, taskId) => html`<${Task} ...${task} taskId="${taskId}" columnId="${columnId}" /> `)}
     <//>`
 }

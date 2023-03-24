@@ -8,8 +8,10 @@ import ButtonPrimary from '../../common/inputs/Button.js'
 import Select from '../../common/inputs/Select.js'
 import Subtasks from './Subtasks.js'
 
-const AddEditTask = ({ openEditTask, openAddTask }) => {
+const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {
+    const { subtasks } = selectedTask
     const formatTitle = `${openAddTask ? 'Add' : 'Edit'} Task`
+
     return html`<${DetailsModal}
         open="${openEditTask || openAddTask}"
         onClose="${closeAddEditTask}"
@@ -21,9 +23,9 @@ const AddEditTask = ({ openEditTask, openAddTask }) => {
             placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
             withoutClear
         />
-        <${Subtasks} />
+        <${Subtasks} elements="${subtasks}" elementName="task" />
         <${Select} label="Status" />
-        <${ButtonPrimary}>Save Changes<//>
+        <${ButtonPrimary} top="24">Save Changes<//>
     <//>`
 }
 

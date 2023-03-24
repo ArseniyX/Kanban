@@ -18,9 +18,9 @@ const SelectStyled = styled('div')`
 
 const DropContainer = styled('div')`
     position: absolute;
-    top: 64px;
+    top: 78px;
     left: 0;
-    width: 93%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 16px;

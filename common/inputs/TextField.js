@@ -2,7 +2,9 @@ import { html, useState, useRef } from 'preact'
 import { styled } from 'goober'
 import { Label } from '../data-display/label.js'
 
-const TextFieldContainer = styled('div')``
+const TextFieldContainer = styled('div')`
+    margin-top: 12px;
+`
 
 const InputField = styled('input')`
     width: 100%;
@@ -46,8 +48,8 @@ const InputError = styled('span')`
     color: #ea5555;
 `
 
-const TextField = ({ value = '', onInputChange = () => {}, label = '', placeholder, withoutClear }) => {
-    const [state, setState] = useState('')
+const TextField = ({ defaultValue = '', onInputChange = () => {}, label = '', placeholder, withoutClear }) => {
+    const [value, setValue] = useState(defaultValue)
     const [isError, setError] = useState(null)
     const inputRef = useRef(null)
 
@@ -56,7 +58,7 @@ const TextField = ({ value = '', onInputChange = () => {}, label = '', placehold
     }
 
     const onChange = (e) => {
-        setState(e.target.value)
+        setValue(e.target.value)
         onInputChange(e.target.value)
         if (e.target.value) {
             setError(false)
@@ -66,15 +68,14 @@ const TextField = ({ value = '', onInputChange = () => {}, label = '', placehold
     }
 
     return html`<${TextFieldContainer}
-        >${label && html`<${Label} for="1">${label}<//>`}
+        >${label && html`<${Label}>${label}<//>`}
         <${InputContainer}>
             <${InputWrapper}>
                 <${InputField}
                     isError="${!isError}"
-                    id="1"
                     ref="${inputRef}"
                     placeholder="${placeholder}"
-                    value="${state}"
+                    value="${value}"
                     onInput="${onChange}"
                 />
                 ${isError && html`<${InputError}>${isError}<//>`}
