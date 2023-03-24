@@ -18,7 +18,7 @@ const TabContainer = styled('div')`
     display: inline-flex;
     align-items: center;
     padding: 16px 32px;
-    width: 200px;
+    width: 100%;
     background: ${({ active }) => (active ? 'var(--primary-background-color)' : 'transparent')};
     border-radius: 0px 100px 100px 0px;
     cursor: pointer;

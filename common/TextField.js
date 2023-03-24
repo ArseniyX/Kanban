@@ -5,10 +5,10 @@ import { Label } from './ui/label.js'
 const TextFieldContainer = styled('div')``
 
 const InputField = styled('input')`
+    width: 100%;
     padding: 8px 16px;
     font-size: 13px;
     line-height: 23px;
-
     border-radius: 4px;
     border: 1px solid ${({ isError }) => (isError ? 'rgba(130, 143, 163, 0.25)' : ' #ea5555')};
     &::placeholder {
@@ -30,6 +30,7 @@ const ClearButton = styled('img')`
 
 const InputWrapper = styled('div')`
     position: relative;
+    width: 100%;
 `
 
 const InputError = styled('span')`
@@ -45,7 +46,7 @@ const InputError = styled('span')`
     color: #ea5555;
 `
 
-const TextField = ({ value = '', onInputChange = () => {}, label = '', withoutClear }) => {
+const TextField = ({ value = '', onInputChange = () => {}, label = '', placeholder, withoutClear }) => {
     const [state, setState] = useState('')
     const [isError, setError] = useState(null)
     const inputRef = useRef(null)
@@ -72,7 +73,7 @@ const TextField = ({ value = '', onInputChange = () => {}, label = '', withoutCl
                     isError="${!isError}"
                     id="1"
                     ref="${inputRef}"
-                    placeholder="hello"
+                    placeholder="${placeholder}"
                     value="${state}"
                     onInput="${onChange}"
                 />

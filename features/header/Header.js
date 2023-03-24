@@ -2,7 +2,7 @@ import { html } from 'preact'
 import { styled } from 'goober'
 import ButtonPrimary from '../../common/Button.js'
 import { withRoot } from '../../store/storeAdapter.js'
-import { openAddTask } from '../../store/rootStore.js'
+import { openAddTask, openEditBoard } from '../../store/rootStore.js'
 import { Options } from '../../common/modals/DetailsModal.js'
 
 const HeaderContainer = styled('div')`
@@ -37,7 +37,7 @@ const OptionsContainer = styled('div')`
 const options = [
     {
         title: 'Edit Board',
-        handler: () => {},
+        handler: openEditBoard,
         variant: 'regular'
     },
     {

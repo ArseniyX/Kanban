@@ -5,6 +5,7 @@ import BoardTabs from './BoardTabs.js'
 
 const NavigationContainer = styled('div')`
     margin-top: 15px;
+    padding-right: 24px;
 `
 
 const Navigation = () => {

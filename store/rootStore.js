@@ -12,7 +12,8 @@ export const rootStore = proxy({
     openTask: false,
     openAddTask: false,
     openEditTask: false,
-    openBoard: false,
+    openAddBoard: false,
+    openEditBoard: false,
     openDeleteBoard: false,
     selectedTask: {}
 })
@@ -50,7 +51,25 @@ export const openAddTask = () => {
     rootStore.openAddTask = true
 }
 
-export const toggleEditTask = () => {
+export const openEditTask = () => {
+    rootStore.openEditTask = true
+    rootStore.openTask = false
+}
+
+export const closeAddEditTask = () => {
     rootStore.openEditTask = false
     rootStore.openAddTask = false
+}
+
+export const openEditBoard = () => {
+    rootStore.openEditBoard = true
+}
+
+export const openAddBoard = () => {
+    rootStore.openAddBoard = true
+}
+
+export const closeAddEditBoard = () => {
+    rootStore.openAddBoard = false
+    rootStore.openEditBoard = false
 }

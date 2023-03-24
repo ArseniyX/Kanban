@@ -37,7 +37,8 @@ const LargeClass = css`
 `
 
 const SmallClass = css`
-    padding: 8px;
+    width: 100%;
+    padding-top: 8px;
     padding-bottom: 9px;
     line-height: 23px;
     font-size: 13px;
@@ -51,7 +52,7 @@ const ButtonPrimaryContainer = styled('button')`
     border: none;
 `
 
-const ButtonPrimary = ({ children, variant, size, ...props }) => {
+const ButtonPrimary = ({ children, variant = 'primary', size = 'small', ...props }) => {
     return html`<${ButtonPrimaryContainer}
         ...${props}
         className="${{

@@ -29,6 +29,12 @@ glob`
         --checkbox-background-color: #F4F7FD;
         --input-field-text-color: #828FA3;
     }
+    html {
+        box-sizing: border-box;
+    }   
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
     body {
         position: relative;
         width: 100%;
@@ -37,5 +43,6 @@ glob`
         padding: 0;
         margin: 0;
         font-family: 'Plus Jakarta Sans', sans-serif;
+        box-sizing: border-box;
     }
 `

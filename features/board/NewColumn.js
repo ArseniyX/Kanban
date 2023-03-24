@@ -17,7 +17,10 @@ const NewColumnContainer = styled('div')`
 `
 
 const NewColumn = () => {
-    return html`<${NewColumnContainer}>+ New Column<//>`
+    const onAddColumn = () => {
+        
+    }
+    return html`<${NewColumnContainer} onClick="${onAddColumn}">+ New Column<//>`
 }
 
 export default NewColumn
