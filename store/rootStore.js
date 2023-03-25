@@ -73,3 +73,7 @@ export const closeAddEditBoard = () => {
     rootStore.openAddBoard = false
     rootStore.openEditBoard = false
 }
+
+export const toggleDeleteDialog = () => {
+    rootStore.openDeleteBoard = !rootStore.openDeleteBoard
+}

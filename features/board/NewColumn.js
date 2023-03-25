@@ -14,6 +14,9 @@ const NewColumnContainer = styled('div')`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    &:hover {
+        color: var(--secondary-color);
+    }
 `
 
 const NewColumn = () => {

@@ -9,7 +9,7 @@ const ShowSidebarContainer = styled('div')`
     bottom: 32px;
     padding: 19px;
     cursor: pointer;
-    background: #635fc7;
+    background: var(--secondary-color);
     border-radius: 0px 100px 100px 0px;
 `
 

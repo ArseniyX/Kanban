@@ -9,7 +9,6 @@ import CheckFiled from '../../common/inputs/CheckFiled.js'
 
 const TaskContent = styled('span')`
     display: block;
-    margin-top: 24px;
     font-size: 13px;
     color: #828fa3;
 `
@@ -19,6 +18,7 @@ const Subtasks = ({ subtasks }) => {
         ({ isCompleted, title }) => html` <${CheckFiled} defaultState="${isCompleted}" text="${title}" /> `
     )
 }
+
 const options = [
     {
         title: 'Edit Task',
@@ -36,7 +36,7 @@ const ViewTask = ({ selectedTask, openTask }) => {
     const { title, subtasks = [], description, status } = selectedTask
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
     return html` <${DetailsModal} title="${title}" open="${openTask}" onClose="${closeTask}" options="${options}">
-        <${TaskContent}>${description}<//>
+        ${description && html`<${TaskContent}>${description}<//>`}
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
         <${Subtasks} subtasks="${subtasks}" />
         <${Select} label="Current Status" selectedValue="${status}" />

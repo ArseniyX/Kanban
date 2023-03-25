@@ -4,7 +4,6 @@ import { Label } from '../data-display/label.js'
 
 const SelectContainer = styled('div')`
     position: relative;
-    margin-top: 24px;
 `
 
 const SelectStyled = styled('div')`
@@ -12,7 +11,8 @@ const SelectStyled = styled('div')`
     justify-content: space-between;
     align-items: center;
     padding: 8px 16px;
-    border: 1px solid rgba(130, 143, 163, 0.25);
+    border: 1px solid ${({ open }) => (open ? 'var(--secondary-color)' : '#828FA340')};
+    border-radius: 4px;
     cursor: pointer;
 `
 
@@ -25,7 +25,7 @@ const DropContainer = styled('div')`
     flex-direction: column;
     padding: 16px;
     padding-top: 8px;
-    background: var(--main-background);
+    background: var(--primary-elements);
     box-shadow: 0px 10px 20px rgba(54, 78, 126, 0.25);
     border-radius: 8px;
 `
@@ -63,7 +63,7 @@ const Select = ({ label, selectedValue = 'Todo' }) => {
     return html`<${SelectContainer}>
         ${label && html`<${Label}>${label}<//>`}
 
-        <${SelectStyled} onClick="${() => setOpen(!open)}">
+        <${SelectStyled} open="${open}" onClick="${() => setOpen(!open)}">
             <${SelectValue}>${value}<//>
             <img src="${'./assets/icon-chevron-arrow.svg'.replace('arrow', open ? 'up' : 'down')}" />
         <//>

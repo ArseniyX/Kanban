@@ -2,9 +2,7 @@ import { html, useState, useRef } from 'preact'
 import { styled } from 'goober'
 import { Label } from '../data-display/label.js'
 
-const TextFieldContainer = styled('div')`
-    margin-top: 12px;
-`
+const TextFieldContainer = styled('div')``
 
 const InputField = styled('input')`
     width: 100%;

@@ -2,7 +2,7 @@ import { html } from 'preact'
 import { styled } from 'goober'
 import ButtonPrimary from '../../common/inputs/Button.js'
 import { withRoot } from '../../store/storeAdapter.js'
-import { openAddTask, openEditBoard } from '../../store/rootStore.js'
+import { openAddTask, openEditBoard, toggleDeleteDialog } from '../../store/rootStore.js'
 import { Options } from '../../common/modals/DetailsModal.js'
 
 const HeaderContainer = styled('div')`
@@ -42,7 +42,7 @@ const options = [
     },
     {
         title: 'Delete Board',
-        handler: () => {},
+        handler: toggleDeleteDialog,
         variant: 'warning'
     }
 ]

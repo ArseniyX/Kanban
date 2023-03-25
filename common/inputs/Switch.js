@@ -5,7 +5,7 @@ const SwitchContainer = styled('label')`
     position: relative;
     width: 40px;
     height: 20px;
-    background: #635fc7;
+    background: var(--secondary-color);
     border-radius: 12px;
     cursor: pointer;
 `

@@ -10,6 +10,7 @@ const DetailsHeader = styled('div')`
 `
 
 const DetailsTitle = styled('span')`
+    color: var(--text-color);
     font-weight: 700;
     font-size: 18px;
 `
@@ -20,6 +21,12 @@ const EllipsisBlock = styled('div')`
 
 const Ellipsis = styled('img')`
     cursor: pointer;
+`
+
+const Wrapper = styled('div')`
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 `
 
 export const Options = ({ options, position }) => {
@@ -37,11 +44,13 @@ const DetailsModal = ({ children, title, options, open, onClose = () => {} }) =>
     return (
         open &&
         html`<${Modal} onClose="${onClose}" open="${open}">
-            <${DetailsHeader}>
-                <${DetailsTitle}>${title}<//>
-                ${options && html`<${Options} options="${options}" />`}
+            <${Wrapper}>
+                <${DetailsHeader}>
+                    <${DetailsTitle}>${title}<//>
+                    ${options && html`<${Options} options="${options}" />`}
+                <//>
+                ${children}
             <//>
-            ${children}
         <//>`
     )
 }

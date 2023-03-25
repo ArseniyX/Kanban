@@ -3,7 +3,6 @@ import { styled } from 'goober'
 
 const CheckFiledContainer = styled('label')`
     display: flex;
-    margin-top: 8px;
     align-items: center;
     padding: 12px;
     background: var(--main-background);

@@ -3,7 +3,7 @@ import { styled } from 'goober'
 import DetailsModal from '../../common/modals/DetailsModal.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditBoard } from '../../store/rootStore.js'
-import Subtasks from './Subtasks.js'
+import EditElements from './EditElements.js'
 import ButtonPrimary from '../../common/inputs/Button.js'
 
 const AddEditBoard = ({ openEditBoard, openAddBoard, columns }) => {
@@ -13,7 +13,7 @@ const AddEditBoard = ({ openEditBoard, openAddBoard, columns }) => {
         onClose="${closeAddEditBoard}"
         title="${formatTitle}"
     >
-        <${Subtasks} elements="${columns}" elementName="column" />
+        <${EditElements} elements="${columns}" elementName="column" />
         <${ButtonPrimary} top="24">${openAddBoard ? 'Add New' : 'Edit'} Board<//>
     <//>`
 }

@@ -16,7 +16,7 @@ const SidebarContainer = styled('div')`
     max-width: 300px;
     height: 100vh;
     background: #fff;
-    border-right: 1px solid #e4ebfa;
+    border-right: 1px solid var(--border-color);
     background: var(--secondary-elements);
 `
 
