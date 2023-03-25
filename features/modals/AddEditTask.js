@@ -26,7 +26,7 @@ const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {
         />
         <${EditElements} elements="${subtasks}" elementName="task" />
         <${Select} label="Status" />
-        <${ButtonPrimary}>Save Changes<//>
+        <${ButtonPrimary} label="Save Changes" />
     <//>`
 }
 

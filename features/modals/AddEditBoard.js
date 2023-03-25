@@ -14,7 +14,7 @@ const AddEditBoard = ({ openEditBoard, openAddBoard, columns }) => {
         title="${formatTitle}"
     >
         <${EditElements} elements="${columns}" elementName="column" />
-        <${ButtonPrimary} top="24">${openAddBoard ? 'Add New' : 'Edit'} Board<//>
+        <${ButtonPrimary} top="24" label="${formatTitle}" />
     <//>`
 }
 

@@ -1,44 +1,35 @@
-import Button from "../components/Button"
+import React from 'react'
+
+import Task from '../common/inputs/Task'
 
 export default {
-  title: "Components/Button",
-  component: Button,
-  argTypes: { handleClick: { action: "handleClick" } },
+    component: Task,
+    title: 'Task'
 }
 
-const Template = args => <Button {...args} />
+const Template = (args) => <Task {...args} />
 
-export const Red = Template.bind({})
-Red.args = {
-  backgroundColor: "red",
-  label: "Press Me",
-  size: "md",
+export const Default = Template.bind({})
+Default.args = {
+    task: {
+        id: '1',
+        title: 'Test Task',
+        state: 'TASK_INBOX'
+    }
 }
 
-export const Green = Template.bind({})
-Green.args = {
-  backgroundColor: "green",
-  label: "Press Me",
-  size: "md",
+export const Pinned = Template.bind({})
+Pinned.args = {
+    task: {
+        ...Default.args.task,
+        state: 'TASK_PINNED'
+    }
 }
 
-export const Small = Template.bind({})
-Small.args = {
-  backgroundColor: "red",
-  label: "Press Me",
-  size: "sm",
-}
-
-export const Large = Template.bind({})
-Large.args = {
-  backgroundColor: "red",
-  label: "Press Me",
-  size: "lg",
-}
-
-export const LongLabel = Template.bind({})
-LongLabel.args = {
-  backgroundColor: "red",
-  label: "Press Me adsf asdf asdf asdfasdfasd fasd fasd fasd",
-  size: "md",
+export const Archived = Template.bind({})
+Archived.args = {
+    task: {
+        ...Default.args.task,
+        state: 'TASK_ARCHIVED'
+    }
 }

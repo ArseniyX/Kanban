@@ -34,7 +34,7 @@ const Dialog = ({ title, content, actions = [] }) => {
             <${ActionsContainer}>
                 ${actions.map(
                     ({ title, handler, variant }) =>
-                        html`<${ButtonPrimary} onClick="${handler}" variant="${variant}">${title}<//>`
+                        html`<${ButtonPrimary} onClick="${handler}" variant="${variant}" label="${title}" />`
                 )}
             <//>
         <//>

@@ -1,9 +1,9 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import ButtonPrimary from '../../../src/common/inputs/Button.js'
 import { withRoot } from '../../../store/storeAdapter.js'
 import { openAddTask, openEditBoard, toggleDeleteDialog } from '../../../store/rootStore.js'
 import { Options } from '../../../src/common/modals/DetailsModal.js'
+import ButtonPrimary from '../../src/common/inputs/Button.js'
 
 const HeaderContainer = styled('div')`
     position: fixed;
@@ -51,7 +51,7 @@ const Header = ({ activeTabName, sidebarOpened }) => {
     return html`<${HeaderContainer} isSidebar="${sidebarOpened}"
         ><${BoardName}>${activeTabName}<//>
         <${OptionsContainer}>
-            <${ButtonPrimary} onClick="${openAddTask}" variant="primary" size="large">+ Add New Task<//>
+            <${ButtonPrimary} onClick="${openAddTask}" variant="primary" size="large" label="+ Add New Task"><//>
             <${Options} options="${options}" position="right" />
         <//>
     <//>`

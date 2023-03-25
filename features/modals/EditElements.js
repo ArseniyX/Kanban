@@ -15,7 +15,7 @@ const EditElements = ({ elements = [], elementName }) => {
         ${elements.map(
             ({ title }) => html` <${TextField} defaultValue="${title}" placeholder="${elementName} Name" /> `
         )}
-        <${ButtonPrimary} variant="secondary"> + Add New ${elementName}<//>
+        <${ButtonPrimary} variant="secondary" label=" + Add New ${elementName}" />
     <//>`
 }
 
