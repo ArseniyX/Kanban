@@ -2,7 +2,7 @@ import { html } from 'preact'
 import { styled } from 'goober'
 import { withRoot } from '../../store/storeAdapter.js'
 import DetailsModal from '../../common/modals/DetailsModal.js'
-import { closeTask, openEditTask } from '../../store/rootStore.js'
+import { closeTask, openEditTask, updateStatus, updateSubtask } from '../../store/rootStore.js'
 import { SubtaskStat } from '../board/Task.js'
 import Select from '../../common/inputs/Select.js'
 import CheckFiled from '../../common/inputs/CheckFiled.js'
@@ -12,12 +12,6 @@ const TaskContent = styled('span')`
     font-size: 13px;
     color: #828fa3;
 `
-
-const Subtasks = ({ subtasks }) => {
-    return subtasks.map(
-        ({ isCompleted, title }) => html` <${CheckFiled} defaultState="${isCompleted}" text="${title}" /> `
-    )
-}
 
 const options = [
     {
@@ -32,6 +26,20 @@ const options = [
     }
 ]
 
+const Subtasks = ({ subtasks }) => {
+    return subtasks.map(
+        ({ isCompleted, title }, index) =>
+            html`
+                <${CheckFiled}
+                    defaultState="${isCompleted}"
+                    text="${title}"
+                    index="${index}"
+                    setSelected="${updateSubtask}"
+                />
+            `
+    )
+}
+
 const ViewTask = ({ selectedTask, openTask }) => {
     const { title, subtasks = [], description, status } = selectedTask
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
@@ -39,7 +47,7 @@ const ViewTask = ({ selectedTask, openTask }) => {
         ${description && html`<${TaskContent}>${description}<//>`}
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
         <${Subtasks} subtasks="${subtasks}" />
-        <${Select} label="Current Status" selectedValue="${status}" />
+        <${Select} label="Current Status" selectedValue="${status}" setSelected="${updateStatus}" />
     <//>`
 }
 

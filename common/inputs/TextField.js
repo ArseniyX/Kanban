@@ -1,6 +1,6 @@
 import { html, useState, useRef } from 'preact'
 import { styled } from 'goober'
-import { Label } from '../data-display/label.js'
+import { LabelStyle } from '../data-display/Label.js'
 
 const TextFieldContainer = styled('div')``
 
@@ -66,7 +66,7 @@ const TextField = ({ defaultValue = '', onInputChange = () => {}, label = '', pl
     }
 
     return html`<${TextFieldContainer}
-        >${label && html`<${Label}>${label}<//>`}
+        >${label && html`<${LabelStyle}>${label}<//>`}
         <${InputContainer}>
             <${InputWrapper}>
                 <${InputField}

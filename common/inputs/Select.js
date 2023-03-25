@@ -1,6 +1,6 @@
 import { html, useState } from 'preact'
 import { styled } from 'goober'
-import { Label } from '../data-display/label.js'
+import { LabelStyle } from '../data-display/Label.js'
 
 const SelectContainer = styled('div')`
     position: relative;
@@ -41,33 +41,32 @@ const Item = styled('span')`
     color: #828fa3;
 `
 
-const Items = ({ items = ['Todo', 'Doing', 'Done'], setValue, setOpen }) => {
+const Items = ({ items = ['Todo', 'Doing', 'Done'], onSelectChange }) => {
     return html`<${DropContainer}>
         ${items.map(
-            (item) =>
-                html`<${Item}
-                    onClick="${() => {
-                        setValue(item)
-                        setOpen(false)
-                    }}"
-                    >${item}<//
-                >`
+            (item, index) => html`<${Item} onClick="${() => onSelectChange({ status: item, index })}">${item}<//>`
         )}
     <//>`
 }
 
-const Select = ({ label, selectedValue = 'Todo' }) => {
+const Select = ({ label, selectedValue = 'Todo', setSelected }) => {
     const [open, setOpen] = useState(false)
     const [value, setValue] = useState(selectedValue)
 
+    const onSelectChange = ({ status, index }) => {
+        setSelected({ status, index, prev: value })
+        setValue(status)
+        setOpen(false)
+    }
+
     return html`<${SelectContainer}>
-        ${label && html`<${Label}>${label}<//>`}
+        ${label && html`<${LabelStyle}>${label}<//>`}
 
         <${SelectStyled} open="${open}" onClick="${() => setOpen(!open)}">
             <${SelectValue}>${value}<//>
             <img src="${'./assets/icon-chevron-arrow.svg'.replace('arrow', open ? 'up' : 'down')}" />
         <//>
-        ${open && html`<${Items} ...${{ setValue, setOpen }} />`}
+        ${open && html`<${Items} onSelectChange="${onSelectChange}" />`}
     <//>`
 }
 

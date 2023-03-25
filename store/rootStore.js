@@ -77,3 +77,12 @@ export const closeAddEditBoard = () => {
 export const toggleDeleteDialog = () => {
     rootStore.openDeleteBoard = !rootStore.openDeleteBoard
 }
+
+export const updateSubtask = ({ index, isCompleted }) => {
+    rootStore.selectedTask.subtasks[index].isCompleted = isCompleted
+}
+
+export const updateStatus = ({ index, status }) => {
+    rootStore.selectedTask.status = status
+    // rootStore.columns[index].tasks.push(rootStore.selectedTask)
+}

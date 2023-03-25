@@ -34,12 +34,12 @@ const TextStyle = styled('span')`
     opacity: ${({ isChecked }) => (isChecked ? 0.5 : 1)};
 `
 
-const CheckFiled = ({ setSelected = () => {}, defaultState, text = '' }) => {
+const CheckFiled = ({ setSelected = () => {}, index, defaultState, text = '' }) => {
     const [state, setState] = useState(defaultState)
 
     const onChange = () => {
         setState(!state)
-        setSelected(state)
+        setSelected({ index, isCompleted: !state })
     }
 
     return html`<${CheckFiledContainer} value="${state}" onInput="${onChange}" isChecked="${state}">

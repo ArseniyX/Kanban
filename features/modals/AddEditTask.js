@@ -9,7 +9,7 @@ import Select from '../../common/inputs/Select.js'
 import EditElements from './EditElements.js'
 
 const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {
-    const { subtasks } = selectedTask
+    const { subtasks, title, description } = selectedTask
     const formatTitle = `${openAddTask ? 'Add' : 'Edit'} Task`
 
     return html`<${DetailsModal}
@@ -17,8 +17,9 @@ const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {
         onClose="${closeAddEditTask}"
         title="${formatTitle}"
     >
-        <${TextField} label="Title" placeholder="Task Name..." withoutClear />
+        <${TextField} defaultValue="${title}" label="Title" placeholder="Task Name..." withoutClear />
         <${TextField}
+            defaultValue="${description}"
             label="Description"
             placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
             withoutClear

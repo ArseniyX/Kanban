@@ -28,7 +28,7 @@ const ColumnStatistics = ({ title, size }) => {
     return html`<${ColumnStat}>
         <${Circle} />
         <${ColumnName}>${title} (${size})<//>
-        <//>`
+    <//>`
 }
 
 const Column = ({ title, tasks, columnId }) => {
