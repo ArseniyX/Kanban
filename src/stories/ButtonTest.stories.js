@@ -1,7 +1,7 @@
 import { setup } from 'goober'
 import { h } from 'preact'
 import '../styles'
-import ButtonPrimary from '../src/common/inputs/Button'
+import ButtonPrimary from '../common/inputs/Button'
 
 setup(h)
 
