@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { withRoot } from '../../../store/storeAdapter.js'
+import { withRoot } from '../../../../store/storeAdapter.js'
 
 const BoardStatsContainer = styled('div')`
     color: #828fa3;

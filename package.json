@@ -1,20 +1,63 @@
 {
-  "name": "kanban",
-  "version": "1.0.0",
-  "description": "![Design preview for the Kanban task management web app coding challenge](./preview.jpg)",
-  "main": "index.html",
+  "name": "storybook-react-crash-course",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@storybook/preact": "^6.5.16",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "goober": "^2.1.12",
+    "htm": "^3.1.1",
+    "preact": "^10.13.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
+  },
   "scripts": {
-    "start": "live-server ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ArseniyX/Kanban.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ArseniyX/Kanban/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
-  "homepage": "https://github.com/ArseniyX/Kanban#readme"
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.5.16"
+  }
 }

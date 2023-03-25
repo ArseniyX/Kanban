@@ -1,8 +1,8 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { withRoot } from '../../../store/storeAdapter.js'
-import Tab from '../../../common/navigation/Tab.js'
-import { openAddBoard, rootStore, setActive } from '../../../store/rootStore.js'
+import { withRoot } from '../../../../store/storeAdapter.js'
+import Tab from '../../../../src/common/navigation/Tab.js'
+import { openAddBoard, rootStore, setActive } from '../../../../store/rootStore.js'
 
 const BoardTabsContainer = styled('div')`
     margin-top: 19px;

@@ -1,11 +1,11 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import DetailsModal from '../../common/modals/DetailsModal.js'
+import DetailsModal from '../../src/common/modals/DetailsModal.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditTask } from '../../store/rootStore.js'
-import TextField from '../../common/inputs/TextField.js'
-import ButtonPrimary from '../../common/inputs/Button.js'
-import Select from '../../common/inputs/Select.js'
+import TextField from '../../src/common/inputs/TextField.js'
+import ButtonPrimary from '../../src/common/inputs/Button.js'
+import Select from '../../src/common/inputs/Select.js'
 import EditElements from './EditElements.js'
 
 const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {

@@ -1,9 +1,9 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import ButtonPrimary from '../../common/inputs/Button.js'
-import { withRoot } from '../../store/storeAdapter.js'
-import { openAddTask, openEditBoard, toggleDeleteDialog } from '../../store/rootStore.js'
-import { Options } from '../../common/modals/DetailsModal.js'
+import ButtonPrimary from '../../../src/common/inputs/Button.js'
+import { withRoot } from '../../../store/storeAdapter.js'
+import { openAddTask, openEditBoard, toggleDeleteDialog } from '../../../store/rootStore.js'
+import { Options } from '../../../src/common/modals/DetailsModal.js'
 
 const HeaderContainer = styled('div')`
     position: fixed;

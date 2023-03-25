@@ -1,11 +1,11 @@
 import { html } from 'preact'
 import { styled } from 'goober'
 import { withRoot } from '../../store/storeAdapter.js'
-import DetailsModal from '../../common/modals/DetailsModal.js'
+import DetailsModal from '../../src/common/modals/DetailsModal.js'
 import { closeTask, openEditTask, updateStatus, updateSubtask } from '../../store/rootStore.js'
 import { SubtaskStat } from '../board/Task.js'
-import Select from '../../common/inputs/Select.js'
-import CheckFiled from '../../common/inputs/CheckFiled.js'
+import Select from '../../src/common/inputs/Select.js'
+import CheckFiled from '../../src/common/inputs/CheckFiled.js'
 
 const TaskContent = styled('span')`
     display: block;

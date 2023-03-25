@@ -1,6 +1,6 @@
 import { proxy } from 'valtio'
 import data from '../data.json' assert { type: 'json' }
-import { updateParams } from '../common/utils.js'
+import { updateParams } from '../src/common/utils.js'
 
 export const rootStore = proxy({
     boards: data.boards,

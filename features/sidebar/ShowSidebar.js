@@ -1,7 +1,7 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { withRoot } from '../../store/storeAdapter.js'
-import { toggleSidebar } from '../../store/rootStore.js'
+import { withRoot } from '../../../store/storeAdapter.js'
+import { toggleSidebar } from '../../../store/rootStore.js'
 
 const ShowSidebarContainer = styled('div')`
     position: fixed;

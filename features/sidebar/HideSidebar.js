@@ -1,6 +1,6 @@
 import { html } from 'preact'
-import Tab from '../../common/navigation/Tab.js'
-import { toggleSidebar } from '../../store/rootStore.js'
+import Tab from '../../../src/common/navigation/Tab.js'
+import { toggleSidebar } from '../../../store/rootStore.js'
 
 const Icon = () => html`<img src="./assets/icon-hide-sidebar.svg" />`
 

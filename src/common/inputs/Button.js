@@ -1,5 +1,8 @@
-import { html } from 'preact'
+import { h } from 'preact'
 import { styled, css } from 'goober'
+import htm from 'htm'
+
+const html = htm.bind(h)
 
 const PrimaryClass = css`
     color: #fff;
@@ -53,7 +56,7 @@ const ButtonPrimaryContainer = styled('button')`
     border: none;
 `
 
-const ButtonPrimary = ({ children, variant = 'primary', size = 'small', ...props }) => {
+const ButtonPrimary = ({ children, variant = 'primary', size = 'small', label, ...props }) => {
     return html`<${ButtonPrimaryContainer}
         ...${props}
         className="${{
@@ -62,7 +65,7 @@ const ButtonPrimary = ({ children, variant = 'primary', size = 'small', ...props
             destructive: DestructiveClass
         }[variant]} 
         ${size === 'large' ? LargeClass : SmallClass}"
-        >${children}<//
+        >${label}<//
     >`
 }
 
