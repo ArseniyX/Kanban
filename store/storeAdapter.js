@@ -1,5 +1,5 @@
 import { html } from 'preact'
-import { useSnapshot } from '../libs/valtio.js'
+import { useSnapshot } from 'valtio'
 import { rootStore } from './rootStore.js'
 
 export const withStore = (store) => (WrappedComponent) => {
