@@ -44,6 +44,8 @@ export const closeTask = () => {
 
 export const openTask = (columnId, taskId) => {
     rootStore.selectedTask = rootStore.columns[columnId].tasks[taskId]
+    rootStore.selectedTask.columnId = columnId
+    rootStore.selectedTask.taskId = taskId
     rootStore.openTask = true
 }
 
@@ -83,6 +85,12 @@ export const updateSubtask = ({ index, isCompleted }) => {
 }
 
 export const updateStatus = ({ index, status }) => {
-    rootStore.selectedTask.status = status
-    // rootStore.columns[index].tasks.push(rootStore.selectedTask)
+    const { columnId, taskId } = rootStore.selectedTask
+    // remove from prev columns
+    rootStore.columns[columnId].tasks = rootStore.columns[columnId].tasks.filter((_, index) => taskId !== index)
+    // add to curr column
+    rootStore.columns[index].tasks.push({ ...rootStore.selectedTask, status })
+    const currTaskId = rootStore.columns[index].tasks.length - 1
+    // update selected
+    openTask(index, currTaskId)
 }
