@@ -1,5 +1,5 @@
 import { html } from 'preact'
-import Dialog from '../../src/common/feadback/dialog.js'
+import Dialog from '../../src/common/feadback/Dialog.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { toggleDeleteDialog } from '../../store/rootStore.js'
 
