@@ -4,7 +4,7 @@ import Logo from './Logo.js'
 import Navigation from './navigation/Navigation.js'
 import ThemeSwitch from './ThemeSwitch.js'
 import HideSidebar from './HideSidebar.js'
-import { withRoot } from '../../../store/storeAdapter.js'
+import { withRoot } from '../../store/storeAdapter.js'
 
 const SidebarContainer = styled('div')`
     position: fixed;

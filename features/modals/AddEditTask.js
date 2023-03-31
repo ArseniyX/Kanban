@@ -5,8 +5,8 @@ import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditTask } from '../../store/rootStore.js'
 import TextField from '../../src/common/inputs/TextField.js'
 import ButtonPrimary from '../../src/common/inputs/Button.js'
-import Select from '../../src/common/inputs/Select.js'
 import EditElements from './EditElements.js'
+import Select from '../../src/common/inputs/Select.js'
 
 const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {
     const { subtasks, title, description } = selectedTask

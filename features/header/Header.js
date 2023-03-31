@@ -2,7 +2,7 @@ import { html } from 'preact'
 import { styled } from 'goober'
 import { withRoot } from '../../../store/storeAdapter.js'
 import { openAddTask, openEditBoard, toggleDeleteDialog } from '../../../store/rootStore.js'
-import { Options } from '../../../src/common/modals/DetailsModal.js'
+import { Options } from '../../src/common/modals/DetailsModal.js'
 import ButtonPrimary from '../../src/common/inputs/Button.js'
 
 const HeaderContainer = styled('div')`
