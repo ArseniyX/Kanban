@@ -1,7 +1,7 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import Switch from '../../../src/common/inputs/Switch.js'
-import { withRoot } from '../../../store/storeAdapter.js'
+import Switch from '../../src/common/inputs/Switch.js'
+import { withRoot } from '../../store/storeAdapter.js'
 import { rootStore, setDarkMode } from '../../store/rootStore.js'
 
 const ThemeSwitchContainer = styled('div')`
