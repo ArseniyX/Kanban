@@ -2,7 +2,6 @@ import { html } from 'preact'
 import { styled } from 'goober'
 import ButtonPrimary from '../../src/common/inputs/Button.js'
 import TextField from '../../src/common/inputs/TextField.js'
-import { withRoot } from '../../store/storeAdapter.js'
 
 const SubtasksContainer = styled('div')`
     display: flex;

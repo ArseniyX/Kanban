@@ -1,5 +1,4 @@
 import { html } from 'preact'
-import { styled } from 'goober'
 import DetailsModal from '../../src/common/modals/DetailsModal.js'
 import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditTask } from '../../store/rootStore.js'
@@ -17,7 +16,7 @@ const AddEditTask = ({ openEditTask, openAddTask, selectedTask }) => {
         onClose="${closeAddEditTask}"
         title="${formatTitle}"
     >
-        <${TextField} defaultValue="${title}" label="Title" placeholder="Task Name..." withoutClear />
+        <${TextField} defaultValue="${title}" label="Title" placeholder="Task Name..." withoutDelete />
         <${TextField}
             defaultValue="${description}"
             label="Description"

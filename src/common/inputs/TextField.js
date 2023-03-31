@@ -5,6 +5,8 @@ import { LabelStyle } from '../data-display/Label.js'
 const TextFieldContainer = styled('div')``
 
 const InputField = styled('input')`
+    color: var(--text-color);
+    background: var(--secondary-elements);
     width: 100%;
     padding: 8px 16px;
     font-size: 13px;
@@ -46,14 +48,18 @@ const InputError = styled('span')`
     color: #ea5555;
 `
 
-const TextField = ({ defaultValue = '', onInputChange = () => {}, label = '', placeholder, withoutClear }) => {
+const TextField = (props) => {
+    const {
+        defaultValue = '',
+        onInputChange = () => {},
+        label = '',
+        placeholder,
+        withoutDelete,
+        onDelete = () => {}
+    } = props
     const [value, setValue] = useState(defaultValue)
     const [isError, setError] = useState(null)
     const inputRef = useRef(null)
-
-    const onClear = () => {
-        inputRef.current.base.value = ''
-    }
 
     const onChange = (e) => {
         setValue(e.target.value)
@@ -78,7 +84,7 @@ const TextField = ({ defaultValue = '', onInputChange = () => {}, label = '', pl
                 />
                 ${isError && html`<${InputError}>${isError}<//>`}
             <//>
-            ${!withoutClear && html`<${ClearButton} onClick="${onClear}" src="./assets/icon-cross.svg" />`}
+            ${!withoutDelete && html`<${ClearButton} onClick="${onDelete}" src="./assets/icon-cross.svg" />`}
         <//><//
     >`
 }

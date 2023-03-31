@@ -5,6 +5,7 @@ import { withRoot } from '../../store/storeAdapter.js'
 import { closeAddEditBoard } from '../../store/rootStore.js'
 import EditElements from './EditElements.js'
 import ButtonPrimary from '../../src/common/inputs/Button.js'
+import TextField from '../../src/common/inputs/TextField.js'
 
 const AddEditBoard = ({ openEditBoard, openAddBoard, columns }) => {
     const formatTitle = `${openAddBoard ? 'Add New' : 'Edit'} Board`
@@ -13,6 +14,7 @@ const AddEditBoard = ({ openEditBoard, openAddBoard, columns }) => {
         onClose="${closeAddEditBoard}"
         title="${formatTitle}"
     >
+        <${TextField} defaultValue="${'column'}" label="Board Name" placeholder="Board Name..." withoutDelete />
         <${EditElements} elements="${columns}" elementName="column" />
         <${ButtonPrimary} top="24" label="${formatTitle}" />
     <//>`
