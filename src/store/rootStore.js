@@ -1,6 +1,6 @@
 import { proxy } from 'valtio'
-import data from '../data.json' assert { type: 'json' }
-import { updateParams } from '../src/common/utils.js'
+import data from '../../data.json' assert { type: 'json' }
+import { updateParams } from '../../src/common/utils.js'
 
 export const rootStore = proxy({
     boards: data.boards,
@@ -17,6 +17,13 @@ export const rootStore = proxy({
     openDeleteBoard: false,
     selectedTask: {}
 })
+
+const defaultTask = {
+    title: '',
+    description: '',
+    status: 'Todo',
+    subtasks: []
+}
 
 export const appendTab = (board) => rootStore.boards.push(board)
 
@@ -61,6 +68,7 @@ export const openEditTask = () => {
 export const closeAddEditTask = () => {
     rootStore.openEditTask = false
     rootStore.openAddTask = false
+    rootStore.selectedTask = defaultTask
 }
 
 export const openEditBoard = () => {
@@ -93,4 +101,24 @@ export const updateStatus = ({ index, status }) => {
     const currTaskId = rootStore.columns[index].tasks.length - 1
     // update selected
     openTask(index, currTaskId)
+}
+
+export const deleteSubtask = (index) => {
+    rootStore.selectedTask.subtasks = rootStore.selectedTask.subtasks.filter((_, id) => id !== index)
+}
+
+export const deleteColumn = (index) => {
+    data.boards[0].columns = data.boards[0].columns.filter((_, id) => id !== index)
+}
+
+export const addSubtask = () => {
+    rootStore.selectedTask.subtasks.push({ title: '', isCompleted: false })
+}
+
+export const updateTask = ({ title, description, subtasks }) => {
+    rootStore.selectedTask
+}
+
+export const onDragStarted = (e, { taskId, columnId }) => {
+    rootStore.columns[columnId].tasks[taskId].hidden = true
 }

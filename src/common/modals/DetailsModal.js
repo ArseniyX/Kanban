@@ -56,3 +56,9 @@ const DetailsModal = ({ children, title, options, open, onClose = () => {} }) =>
 }
 
 export default DetailsModal
+
+
+const List = () => {
+    const { elements } = useStore(commonStore)
+    return elements.map()
+}

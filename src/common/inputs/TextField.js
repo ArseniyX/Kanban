@@ -50,6 +50,7 @@ const InputError = styled('span')`
 
 const TextField = (props) => {
     const {
+        index,
         defaultValue = '',
         onInputChange = () => {},
         label = '',
@@ -84,7 +85,7 @@ const TextField = (props) => {
                 />
                 ${isError && html`<${InputError}>${isError}<//>`}
             <//>
-            ${!withoutDelete && html`<${ClearButton} onClick="${onDelete}" src="./assets/icon-cross.svg" />`}
+            ${!withoutDelete && html`<${ClearButton} onClick="${() => onDelete(index)}" src="./assets/icon-cross.svg" />`}
         <//><//
     >`
 }

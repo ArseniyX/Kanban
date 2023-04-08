@@ -1,6 +1,6 @@
 import { html } from 'preact'
 import { styled } from 'goober'
-import { openTask } from '../../store/rootStore.js'
+import { onDragStarted, openTask } from '../../store/rootStore.js'
 
 const CardTitle = styled('span')`
     color: var(--text-color);
@@ -10,11 +10,12 @@ const CardTitle = styled('span')`
 `
 
 const TaskContainer = styled('div')`
+    transition: 0.01s;
+    transform: translateX(${({ isHidden }) => (isHidden ? '-9999px' : '0px')});
     margin-top: 20px;
     padding: 23px 16px;
     background: var(--secondary-elements);
     box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
-    cursor: pointer;
     border-radius: 8px;
     &:hover {
         ${CardTitle} {
@@ -33,9 +34,14 @@ export const SubtaskStat = ({ countCompleted, size }) => {
 }
 
 const Task = (props) => {
-    const { title, subtasks = [], columnId, taskId } = props
+    const { title, subtasks = [], columnId, taskId, hidden } = props
     const countCompleted = subtasks.filter(({ isCompleted }) => isCompleted).length
-    return html`<${TaskContainer} onClick="${() => openTask(columnId, taskId)}">
+    return html`<${TaskContainer}
+        isHidden="${hidden}"
+        draggable="true"
+        onDragStart="${(e) => onDragStarted(e, { taskId, columnId })}"
+        onClick="${() => openTask(columnId, taskId)}"
+    >
         <${CardTitle}> ${title}<//>
         <${SubtaskStat} countCompleted="${countCompleted}" size="${subtasks.length}" />
     <//>`

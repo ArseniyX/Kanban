@@ -8,10 +8,10 @@ export const LabelStyle = styled('label')`
     margin-bottom: 8px;
 `
 
-const labelContainer = styled('div')``
+const LabelContainer = styled('div')``
 
-const label = () => {
-    return html`<${labelContainer}> <//>`
+const Label = ({ children }) => {
+    return html`<${LabelContainer}>${children}<//>`
 }
 
-export default label
+export default Label

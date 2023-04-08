@@ -1,8 +1,8 @@
 import { render, html, h } from 'preact'
 import { setup, glob } from 'goober'
-import Story from './features/Story.js'
-import Layout from './features/layout/Layout.js'
-import Board from './features/board/Board.js'
+import Story from './src/features/Story.js'
+import Layout from './src/features/layout/Layout.js'
+import Board from './src/features/board/Board.js'
 
 setup(h)
 

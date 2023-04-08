@@ -51,4 +51,7 @@ glob`
         font-family: 'Plus Jakarta Sans', sans-serif;
         box-sizing: border-box;
     }
+    [draggable] {
+        cursor: move;
+    }
 `
